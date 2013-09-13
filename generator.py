@@ -4,14 +4,15 @@
 import os
 import time
  
-quantity = 500
 directory = '/home/nedr/mount/files/'
+# Creates level0 * level1 files
 level0 = 200
 level1 = 10000
+
  
 def number_format(num, places=0):
  
-    places = max(0,places)
+    places = max(0, places)
     tmp = "%.*f" % (places, num)
     point = tmp.find(".")
     integer = (point == -1) and tmp or tmp[:point]
@@ -28,7 +29,7 @@ def number_format(num, places=0):
     integer = "".join(formatted[::-1])
     return integer+decimal
 
- 
+
 class Profiler(object):
     def __enter__(self):
         self._startTime = time.time()
